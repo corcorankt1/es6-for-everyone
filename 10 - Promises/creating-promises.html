@@ -6,10 +6,13 @@
 </head>
 <body>
 <script>
-  const p = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      reject(Error('Err wes isn\'t cool'));
-    }, 1000);
+
+
+  const p = new Promise((resolve,reject) => {
+    setTimeout(()=> {
+      reject(Error('Wes isn\'t cool'));
+    },1000);
+    // resolve('Wes is Cool');
   });
 
   p
