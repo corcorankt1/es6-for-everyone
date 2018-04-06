@@ -7,17 +7,29 @@
 <body>
 <script>
   class MovieCollection extends Array {
-    constructor(name, ...items) {
-      super(...items);
+    constructor(name, ...items){ // Get the rest of the items
+      super(...items); // Spread into the array
       this.name = name;
     }
     add(movie) {
       this.push(movie);
     }
     topRated(limit = 10) {
-      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+      return this.sort((a,b) => (a.stars > b.stars ? -1 : 1)).slice(0,limit);
     }
   }
+  // class MovieCollection extends Array {
+  //   constructor(name, ...items) {
+  //     super(...items);
+  //     this.name = name;
+  //   }
+  //   add(movie) {
+  //     this.push(movie);
+  //   }
+  //   topRated(limit = 10) {
+  //     return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+  //   }
+  // }
 
   const movies = new MovieCollection('Wes\'s Fav Movies',
     { name: 'Bee Movie', stars: 10 },
@@ -26,8 +38,8 @@
     { name: 'King of the Road', stars: 8 }
   );
 
-  movies.add({ name: 'Titanic', stars: 5 });
-
+  // movies.add({ name: 'Titanic', stars: 5 });
+  movies.add({name: 'Titanic', stars: 5});
 </script>
 </body>
 </html>
